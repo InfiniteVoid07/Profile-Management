@@ -52,8 +52,14 @@ app.use(errorHandler);
 app.use("*", notFoundHandler);
 
 // ======================== SERVER STARTUP ========================
-app.listen(PORT, () => {
-  console.log(`🚀 Enhanced Server running on port ${PORT}`);
-  console.log(`📡 API Base URL: http://localhost:${PORT}`);
-  console.log(`🖼️ Images served from: Cloudinary CDN`);
-});
+// For local development
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`🚀 Enhanced Server running on port ${PORT}`);
+    console.log(`📡 API Base URL: http://localhost:${PORT}`);
+    console.log(`🖼️ Images served from: Cloudinary CDN`);
+  });
+}
+
+// Export for Vercel
+module.exports = app;
