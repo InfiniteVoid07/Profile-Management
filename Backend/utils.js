@@ -1,8 +1,9 @@
 // utils.js
 // ======================== UTILITY FUNCTIONS ========================
 const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const pool = require("./db");
+const { v2: cloudinary } = require('cloudinary');
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
