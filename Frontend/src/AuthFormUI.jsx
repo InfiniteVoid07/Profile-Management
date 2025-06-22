@@ -214,11 +214,16 @@ const DemoInfo = ({ isSignup }) => {
   if (isSignup) return null;
   
   return (
-    <div className="auth-demo-info">
-      <p className="auth-demo-text">
-        Use your database credentials to login
-      </p>
-    </div>
+    <div className="auth-demo-info" style={{ textAlign: "center", marginTop: "1rem" }}>
+  <p className="auth-demo-text" style={{ fontWeight: "bold", fontSize: "1.1rem" }}>
+    Demo Account to login:
+  </p>
+  <p>Admin1@gmail.com — <strong>pass:</strong> Admin1</p>
+  <p>Employee1@gmail.com — <strong>pass:</strong> Employee1</p>
+  <p style={{ fontStyle: "italic", color: "gray", marginTop: "0.5rem" }}>
+    Note: Don’t delete these accounts. You can create your own account to test edit/delete functionality.
+  </p>
+</div>
   );
 };
 
