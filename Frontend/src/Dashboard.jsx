@@ -107,6 +107,7 @@ export default function Dashboard({ user, onLogout }) {
 
       const data = await response.json();
       console.log('Cloudinary upload success:', data.secure_url);
+      setProfileImage(data.secure_url); //Update the local state immediately after successful upload
       return data.secure_url;
     } catch (error) {
       console.error('Cloudinary upload error:', error);
